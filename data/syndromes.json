@@ -9,7 +9,9 @@
       "Moraxella",
       "Mycoplasma",
       "Chlamydia",
-      "Legionella"
+      "Legionella",
+      "Staph aureus (post-viral)",
+      "Klebsiella (alcoholic)"
     ],
     "empiric": [
       "Ceftriaxone + Azithromycin",
@@ -21,10 +23,10 @@
     },
     "pearls": [
       "Always cover atypicals",
-      "Post-influenza pneumonia → MRSA"
+      "Post-influenza pneumonia → MRSA",
+      "Legionella → diarrhea + hyponatremia"
     ]
   },
-
   {
     "id": "hap",
     "name": "HAP / VAP",
@@ -33,17 +35,212 @@
       "MRSA",
       "Pseudomonas",
       "Klebsiella",
-      "Acinetobacter"
+      "Acinetobacter",
+      "Enterobacter"
     ],
     "empiric": [
       "Vancomycin + Cefepime",
       "Vancomycin + Zosyn"
     ],
     "escalation": {
-      "Septic shock": "Add second antipseudomonal agent"
+      "Septic shock": "Add second antipseudomonal agent",
+      "MDR risk": "Consider carbapenem"
     },
     "pearls": [
-      "Always cover MRSA + Pseudomonas"
+      "Always cover MRSA + Pseudomonas",
+      "De-escalate based on cultures",
+      "Risk factors: prior antibiotics, ICU stay"
+    ]
+  },
+  {
+    "id": "uti",
+    "name": "Urinary Tract Infection",
+    "short": "Enteric gram negatives ± enterococcus",
+    "organisms": [
+      "E coli",
+      "Klebsiella",
+      "Proteus",
+      "Enterococcus",
+      "Pseudomonas (complicated)"
+    ],
+    "empiric": [
+      "Ceftriaxone",
+      "Nitrofurantoin (uncomplicated)",
+      "TMP-SMX"
+    ],
+    "escalation": {
+      "Sepsis": "Zosyn or Cefepime",
+      "ESBL risk": "Carbapenem"
+    },
+    "pearls": [
+      "Most are E coli",
+      "Enterococcus not covered by cephalosporins",
+      "Proteus → alkaline urine + stones"
+    ]
+  },
+  {
+    "id": "ssti",
+    "name": "Skin and Soft Tissue Infection",
+    "short": "Gram positive skin flora ± polymicrobial",
+    "organisms": [
+      "Staph aureus (MSSA/MRSA)",
+      "Strep pyogenes",
+      "Anaerobes (diabetic foot)",
+      "Gram negatives (severe/diabetic)"
+    ],
+    "empiric": [
+      "Cefazolin (nonpurulent)",
+      "TMP-SMX or Doxycycline (MRSA)",
+      "Vancomycin (severe)"
+    ],
+    "escalation": {
+      "Necrotizing": "Vancomycin + Zosyn + Clindamycin",
+      "Diabetic foot": "Broad polymicrobial coverage"
+    },
+    "pearls": [
+      "Purulence → MRSA",
+      "Rapid progression → think nec fasc",
+      "Clindamycin suppresses toxin production"
+    ]
+  },
+  {
+    "id": "intra_abdominal",
+    "name": "Intra-abdominal Infection",
+    "short": "Gram negatives + anaerobes (always)",
+    "organisms": [
+      "E coli",
+      "Klebsiella",
+      "Bacteroides fragilis",
+      "Enterococcus (sometimes)"
+    ],
+    "empiric": [
+      "Zosyn",
+      "Ceftriaxone + Metronidazole",
+      "Carbapenem (severe)"
+    ],
+    "escalation": {
+      "Healthcare-associated": "Add enterococcus coverage",
+      "Septic shock": "Carbapenem"
+    },
+    "pearls": [
+      "Always cover anaerobes",
+      "Source control is critical",
+      "Foul smell → anaerobes"
+    ]
+  },
+  {
+    "id": "line",
+    "name": "Line / Catheter Infection",
+    "short": "Skin flora + hospital gram negatives",
+    "organisms": [
+      "Staph aureus",
+      "Staph epidermidis",
+      "Enterococcus",
+      "Gram negative rods"
+    ],
+    "empiric": [
+      "Vancomycin + Cefepime",
+      "Vancomycin + Zosyn"
+    ],
+    "escalation": {
+      "Persistent bacteremia": "Evaluate for endocarditis",
+      "Septic shock": "Broad gram negative coverage"
+    },
+    "pearls": [
+      "Remove the line",
+      "Always consider endocarditis",
+      "Biofilm → difficult eradication"
+    ]
+  },
+  {
+    "id": "sepsis_unknown",
+    "name": "Sepsis (Unknown Source)",
+    "short": "Broad coverage of G+, G-, ± anaerobes",
+    "organisms": [
+      "MRSA",
+      "Pseudomonas",
+      "Enterobacterales",
+      "Anaerobes (if abdominal source)"
+    ],
+    "empiric": [
+      "Vancomycin + Cefepime",
+      "Vancomycin + Zosyn"
+    ],
+    "escalation": {
+      "Shock": "Add second antipseudomonal",
+      "Abdominal concern": "Ensure anaerobic coverage"
+    },
+    "pearls": [
+      "Start broad, then de-escalate",
+      "Source identification is key",
+      "Time to antibiotics affects mortality"
+    ]
+  },
+  {
+    "id": "cns",
+    "name": "Meningitis",
+    "short": "Age-dependent pathogens",
+    "organisms": [
+      "Strep pneumoniae",
+      "Neisseria meningitidis",
+      "Listeria (elderly/immunocompromised)",
+      "H influenzae"
+    ],
+    "empiric": [
+      "Vancomycin + Ceftriaxone",
+      "Add Ampicillin (Listeria coverage)"
+    ],
+    "escalation": {
+      "Immunocompromised": "Add broader gram negative coverage"
+    },
+    "pearls": [
+      "Always add ampicillin if >50 or immunocompromised",
+      "Give dexamethasone early",
+      "CSF glucose low in bacterial"
+    ]
+  },
+  {
+    "id": "aspiration",
+    "name": "Aspiration Pneumonia",
+    "short": "Oral anaerobes + mixed flora",
+    "organisms": [
+      "Anaerobes",
+      "Strep species",
+      "Gram negative rods"
+    ],
+    "empiric": [
+      "Zosyn",
+      "Ampicillin-sulbactam"
+    ],
+    "escalation": {
+      "Severe": "Carbapenem"
+    },
+    "pearls": [
+      "Foul-smelling sputum",
+      "Dependent lobe infiltrates",
+      "Loss of consciousness risk factor"
+    ]
+  },
+  {
+    "id": "endocarditis",
+    "name": "Endocarditis",
+    "short": "Gram positive bacteremia with valve involvement",
+    "organisms": [
+      "Staph aureus",
+      "Viridans strep",
+      "Enterococcus"
+    ],
+    "empiric": [
+      "Vancomycin + Ceftriaxone"
+    ],
+    "escalation": {
+      "Prosthetic valve": "Add rifampin",
+      "Enterococcus": "Ampicillin-based regimen"
+    },
+    "pearls": [
+      "Always get blood cultures first",
+      "Think in persistent bacteremia",
+      "Embolic phenomena common"
     ]
   }
 ]
