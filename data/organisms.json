@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Strep pneumoniae",
+    "seen_in": ["CAP", "Meningitis"],
+    "covered_by": ["Ceftriaxone", "Amoxicillin"]
+  },
+  {
+    "name": "Pseudomonas aeruginosa",
+    "seen_in": ["HAP", "VAP", "UTI", "ICU"],
+    "covered_by": ["Cefepime", "Zosyn", "Meropenem"]
+  },
+  {
+    "name": "MRSA",
+    "seen_in": ["SSTI", "HAP", "Endocarditis"],
+    "covered_by": ["Vancomycin", "Linezolid"]
+  }
+]
