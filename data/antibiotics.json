@@ -1,34 +1,22 @@
 [
   {
-    "name": "Ceftriaxone",
-    "mrsa": false,
-    "pseudomonas": false,
-    "anaerobes": false,
-    "enterococcus": false,
-    "atypicals": false
-  },
-  {
-    "name": "Cefepime",
-    "mrsa": false,
-    "pseudomonas": true,
-    "anaerobes": false,
-    "enterococcus": false,
-    "atypicals": false
-  },
-  {
-    "name": "Piperacillin-Tazobactam",
-    "mrsa": false,
-    "pseudomonas": true,
-    "anaerobes": true,
-    "enterococcus": true,
-    "atypicals": false
-  },
-  {
+    "id": "vancomycin",
     "name": "Vancomycin",
-    "mrsa": true,
-    "pseudomonas": false,
-    "anaerobes": false,
-    "enterococcus": true,
-    "atypicals": false
+    "class": "Glycopeptide",
+    "coverage": [
+      "MRSA",
+      "MSSA",
+      "Streptococci",
+      "Enterococcus"
+    ],
+    "misses": [
+      "Gram negatives",
+      "Anaerobes"
+    ],
+    "pearls": [
+      "Drug of choice for MRSA",
+      "Monitor levels",
+      "Nephrotoxicity risk"
+    ]
   }
 ]
