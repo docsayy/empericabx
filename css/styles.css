@@ -1,4 +1,3 @@
-```css
 /* ===================================================
    EmpiricAbx
    styles.css
@@ -611,4 +610,514 @@ footer {
         text-align: center;
     }
 }
-```
+
+/* ===================================================
+   EmpiricAbx Extended Components
+   Add BELOW existing CSS
+=================================================== */
+
+/* ========================
+   Modal Content
+======================== */
+
+#modalContent h2 {
+    margin-bottom: 24px;
+    color: var(--primary);
+}
+
+.modal-section {
+    margin-bottom: 28px;
+}
+
+.modal-section h3 {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.modal-list {
+    padding-left: 20px;
+}
+
+.modal-list li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* ========================
+   Pills / Tags
+======================== */
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.pill-mrsa {
+    background: #ffe5e5;
+    color: #c53030;
+}
+
+.pill-pseudomonas {
+    background: #edfdf4;
+    color: #2f855a;
+}
+
+.pill-anaerobe {
+    background: #fff4e5;
+    color: #c05621;
+}
+
+.pill-atypical {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+.pill-enterococcus {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.pill-esbl {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.pill-icu {
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+/* ========================
+   Syndrome Quick Summary
+======================== */
+
+.rapid-recall {
+    background: var(--primary-light);
+
+    border-left: 4px solid var(--primary);
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    margin-top: 12px;
+
+    line-height: 1.7;
+}
+
+/* ========================
+   Antibiotic Explorer
+======================== */
+
+.antibiotic-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.antibiotic-card {
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+
+    border: 1px solid var(--border);
+}
+
+.antibiotic-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.antibiotic-card h3 {
+    margin-bottom: 12px;
+
+    color: var(--primary);
+}
+
+.coverage-row {
+    margin-bottom: 8px;
+}
+
+.coverage-yes {
+    color: var(--success);
+    font-weight: 700;
+}
+
+.coverage-no {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+/* ========================
+   Organism Explorer
+======================== */
+
+.organism-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.organism-card {
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    box-shadow: var(--shadow-sm);
+
+    border: 1px solid var(--border);
+
+    transition: var(--transition);
+}
+
+.organism-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.organism-card h3 {
+    color: var(--primary);
+
+    margin-bottom: 12px;
+}
+
+.organism-section {
+    margin-top: 14px;
+}
+
+.organism-section strong {
+    display: block;
+
+    margin-bottom: 6px;
+}
+
+/* ========================
+   Coverage Matrix
+======================== */
+
+.coverage-table-wrapper {
+    overflow-x: auto;
+
+    margin-top: 20px;
+}
+
+.coverage-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.coverage-table th {
+    background: var(--primary);
+
+    color: white;
+
+    padding: 14px;
+
+    text-align: center;
+}
+
+.coverage-table td {
+    padding: 14px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.coverage-table td:hover {
+    background: #f8fafc;
+}
+
+.matrix-yes {
+    color: var(--success);
+
+    font-weight: 700;
+}
+
+.matrix-no {
+    color: var(--danger);
+
+    font-weight: 700;
+}
+
+/* ========================
+   Coverage Builder
+======================== */
+
+.builder-container {
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 28px;
+
+    box-shadow: var(--shadow-sm);
+
+    margin-top: 20px;
+}
+
+.builder-section {
+    margin-bottom: 24px;
+}
+
+.builder-section h3 {
+    margin-bottom: 12px;
+}
+
+.checkbox-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(180px, 1fr));
+
+    gap: 12px;
+}
+
+.checkbox-card {
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    background: white;
+}
+
+.checkbox-card:hover {
+    background: var(--primary-light);
+}
+
+.checkbox-card input {
+    margin-right: 8px;
+}
+
+.builder-result {
+    margin-top: 24px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+}
+
+.regimen {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+.reasoning-list {
+    padding-left: 18px;
+}
+
+.reasoning-list li {
+    margin-bottom: 8px;
+}
+
+/* ========================
+   Board Pearls
+======================== */
+
+.pearl-card {
+    background: white;
+
+    border-left: 4px solid var(--primary);
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    margin-bottom: 16px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.pearl-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* ========================
+   Quiz Mode
+======================== */
+
+.quiz-card {
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 28px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.quiz-question {
+    font-size: 1.15rem;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+.quiz-option {
+    display: block;
+
+    width: 100%;
+
+    text-align: left;
+
+    margin-bottom: 10px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.quiz-option:hover {
+    background: var(--primary-light);
+}
+
+.quiz-correct {
+    background: #ecfdf5;
+    border-color: #22c55e;
+}
+
+.quiz-incorrect {
+    background: #fef2f2;
+    border-color: #ef4444;
+}
+
+/* ========================
+   Buttons
+======================== */
+
+.btn-primary {
+    background: var(--primary);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: white;
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: #f8fafc;
+}
+
+/* ========================
+   Loading State
+======================== */
+
+.loading {
+    text-align: center;
+
+    padding: 40px;
+
+    color: var(--text-light);
+}
+
+/* ========================
+   Empty State
+======================== */
+
+.empty-state {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: var(--text-light);
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+}
