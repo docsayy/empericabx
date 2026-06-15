@@ -1,4 +1,4 @@
-```javascript
+javascript
 console.log("EmpiricAbx loaded");
 
 let syndromes = [];
@@ -505,4 +505,3 @@ function handleSearchClick(id, type) {
         }
     }
 }
-```
