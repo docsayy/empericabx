@@ -1,0 +1,264 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpiricAbx | Bedside Empiric Antibiotic Reasoning</title>
+
+    <meta name="description"
+          content="EmpiricAbx - Think Source → Bugs → Coverage. A bedside empiric antibiotic reasoning tool for residents and clinicians.">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo-section">
+        <h1>EmpiricAbx</h1>
+        <p>Think Source → Bugs → Coverage</p>
+    </div>
+
+    <div class="search-wrapper">
+        <input
+            type="text"
+            id="globalSearch"
+            placeholder="Search syndromes, antibiotics, organisms..."
+            autocomplete="off">
+
+        <div id="searchResults" class="search-results hidden"></div>
+    </div>
+</header>
+
+<nav class="main-nav">
+    <button class="nav-btn active" data-view="home">
+        Infection Syndromes
+    </button>
+
+    <button class="nav-btn" data-view="coverage">
+        Coverage Matrix
+    </button>
+
+    <button class="nav-btn" data-view="antibiotics">
+        Antibiotic Explorer
+    </button>
+
+    <button class="nav-btn" data-view="organisms">
+        Organism Explorer
+    </button>
+
+    <button class="nav-btn" data-view="builder">
+        Coverage Builder
+    </button>
+
+    <button class="nav-btn" data-view="pearls">
+        Board Pearls
+    </button>
+
+    <button class="nav-btn" data-view="quiz">
+        Quiz Mode
+    </button>
+</nav>
+
+<main>
+
+    <!-- HOME -->
+    <section id="homeView" class="view active-view">
+
+        <section class="hero">
+
+            <h2>
+                Bedside Empiric Antibiotic Reasoning
+            </h2>
+
+            <p>
+                Designed for residents and clinicians.
+                Start with the source, identify the bugs,
+                choose the right empiric coverage,
+                and avoid common pitfalls.
+            </p>
+
+        </section>
+
+        <section>
+
+            <div class="section-header">
+                <h2>Infection Syndromes</h2>
+
+                <span id="syndromeCount">
+                    Loading...
+                </span>
+            </div>
+
+            <div id="syndromeGrid" class="card-grid">
+
+                <!-- JS inserts cards -->
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- COVERAGE MATRIX -->
+    <section id="coverageView" class="view">
+
+        <div class="placeholder">
+
+            <h2>Coverage Matrix</h2>
+
+            <p>
+                Compare antibiotics against MRSA,
+                Pseudomonas, anaerobes,
+                Enterococcus, atypicals,
+                and more.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANTIBIOTICS -->
+    <section id="antibioticsView" class="view">
+
+        <div class="placeholder">
+
+            <h2>Antibiotic Explorer</h2>
+
+            <p>
+                Browse antibiotic profiles,
+                coverage, pitfalls,
+                and clinical pearls.
+            </p>
+
+            <div id="antibioticContainer"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ORGANISMS -->
+    <section id="organismsView" class="view">
+
+        <div class="placeholder">
+
+            <h2>Organism Explorer</h2>
+
+            <p>
+                Learn where organisms appear,
+                what covers them,
+                and important board pearls.
+            </p>
+
+            <div id="organismContainer"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUILDER -->
+    <section id="builderView" class="view">
+
+        <div class="placeholder">
+
+            <h2>Coverage Builder</h2>
+
+            <p>
+                Build empiric regimens
+                using infection source
+                and resistance risk factors.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PEARLS -->
+    <section id="pearlsView" class="view">
+
+        <div class="placeholder">
+
+            <h2>Board Pearls</h2>
+
+            <p>
+                High-yield infectious disease
+                recall points and pitfalls.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quizView" class="view">
+
+        <div class="placeholder">
+
+            <h2>Quiz Mode</h2>
+
+            <p>
+                Test yourself with
+                board-style scenarios.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- MODAL -->
+<div id="modalOverlay" class="modal-overlay hidden">
+
+    <div class="modal">
+
+        <button
+            id="closeModal"
+            class="modal-close"
+            aria-label="Close">
+
+            ×
+
+        </button>
+
+        <div id="modalContent">
+
+            <!-- Syndrome details inserted here -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div>
+
+        EmpiricAbx
+
+    </div>
+
+    <div>
+
+        Think Source → Bugs → Coverage
+
+    </div>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
+```
