@@ -1,264 +1,614 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmpiricAbx | Bedside Empiric Antibiotic Reasoning</title>
+```css
+/* ===================================================
+   EmpiricAbx
+   styles.css
+   Modern Medical Dashboard Theme
+=================================================== */
 
-    <meta name="description"
-          content="EmpiricAbx - Think Source → Bugs → Coverage. A bedside empiric antibiotic reasoning tool for residents and clinicians.">
+:root {
+    --primary: #1e5fa8;
+    --primary-dark: #164d89;
+    --primary-light: #eaf3fc;
 
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    --success: #2f855a;
+    --warning: #c05621;
+    --danger: #c53030;
 
-<body>
+    --text: #1f2937;
+    --text-light: #6b7280;
 
-<header class="topbar">
-    <div class="logo-section">
-        <h1>EmpiricAbx</h1>
-        <p>Think Source → Bugs → Coverage</p>
-    </div>
+    --background: #f7f9fc;
+    --surface: #ffffff;
+    --border: #e5e7eb;
 
-    <div class="search-wrapper">
-        <input
-            type="text"
-            id="globalSearch"
-            placeholder="Search syndromes, antibiotics, organisms..."
-            autocomplete="off">
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 6px 18px rgba(0,0,0,0.08);
 
-        <div id="searchResults" class="search-results hidden"></div>
-    </div>
-</header>
+    --radius: 14px;
 
-<nav class="main-nav">
-    <button class="nav-btn active" data-view="home">
-        Infection Syndromes
-    </button>
+    --transition: 0.2s ease;
+}
 
-    <button class="nav-btn" data-view="coverage">
-        Coverage Matrix
-    </button>
+/* ========================
+   Base
+======================== */
 
-    <button class="nav-btn" data-view="antibiotics">
-        Antibiotic Explorer
-    </button>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <button class="nav-btn" data-view="organisms">
-        Organism Explorer
-    </button>
+html {
+    scroll-behavior: smooth;
+}
 
-    <button class="nav-btn" data-view="builder">
-        Coverage Builder
-    </button>
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-    <button class="nav-btn" data-view="pearls">
-        Board Pearls
-    </button>
+    background: var(--background);
+    color: var(--text);
 
-    <button class="nav-btn" data-view="quiz">
-        Quiz Mode
-    </button>
-</nav>
+    min-height: 100vh;
 
-<main>
+    display: flex;
+    flex-direction: column;
+}
 
-    <!-- HOME -->
-    <section id="homeView" class="view active-view">
+/* ========================
+   Header
+======================== */
 
-        <section class="hero">
+.topbar {
+    position: sticky;
+    top: 0;
 
-            <h2>
-                Bedside Empiric Antibiotic Reasoning
-            </h2>
+    z-index: 100;
 
-            <p>
-                Designed for residents and clinicians.
-                Start with the source, identify the bugs,
-                choose the right empiric coverage,
-                and avoid common pitfalls.
-            </p>
+    background: var(--surface);
 
-        </section>
+    border-bottom: 1px solid var(--border);
 
-        <section>
+    padding: 18px 24px;
 
-            <div class="section-header">
-                <h2>Infection Syndromes</h2>
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
 
-                <span id="syndromeCount">
-                    Loading...
-                </span>
-            </div>
+    justify-content: space-between;
+    align-items: center;
 
-            <div id="syndromeGrid" class="card-grid">
+    box-shadow: var(--shadow-sm);
+}
 
-                <!-- JS inserts cards -->
+.logo-section h1 {
+    color: var(--primary);
 
-            </div>
+    font-size: 2rem;
+    font-weight: 700;
+}
 
-        </section>
+.logo-section p {
+    color: var(--text-light);
 
-    </section>
+    margin-top: 4px;
 
+    font-size: 0.95rem;
+}
 
-    <!-- COVERAGE MATRIX -->
-    <section id="coverageView" class="view">
+/* ========================
+   Search
+======================== */
 
-        <div class="placeholder">
+.search-wrapper {
+    position: relative;
 
-            <h2>Coverage Matrix</h2>
+    width: 420px;
+    max-width: 100%;
+}
 
-            <p>
-                Compare antibiotics against MRSA,
-                Pseudomonas, anaerobes,
-                Enterococcus, atypicals,
-                and more.
-            </p>
+#globalSearch {
+    width: 100%;
 
-        </div>
+    padding: 14px 16px;
 
-    </section>
+    border-radius: 12px;
 
+    border: 1px solid var(--border);
 
-    <!-- ANTIBIOTICS -->
-    <section id="antibioticsView" class="view">
+    background: white;
 
-        <div class="placeholder">
+    font-size: 1rem;
 
-            <h2>Antibiotic Explorer</h2>
+    outline: none;
 
-            <p>
-                Browse antibiotic profiles,
-                coverage, pitfalls,
-                and clinical pearls.
-            </p>
+    transition: var(--transition);
+}
 
-            <div id="antibioticContainer"></div>
+#globalSearch:focus {
+    border-color: var(--primary);
 
-        </div>
+    box-shadow: 0 0 0 4px rgba(30,95,168,0.12);
+}
 
-    </section>
+.search-results {
+    position: absolute;
 
+    top: calc(100% + 8px);
 
-    <!-- ORGANISMS -->
-    <section id="organismsView" class="view">
+    width: 100%;
 
-        <div class="placeholder">
+    background: white;
 
-            <h2>Organism Explorer</h2>
+    border-radius: var(--radius);
 
-            <p>
-                Learn where organisms appear,
-                what covers them,
-                and important board pearls.
-            </p>
+    border: 1px solid var(--border);
 
-            <div id="organismContainer"></div>
+    box-shadow: var(--shadow-md);
 
-        </div>
+    overflow: hidden;
 
-    </section>
+    max-height: 320px;
 
+    overflow-y: auto;
+}
 
-    <!-- BUILDER -->
-    <section id="builderView" class="view">
+.search-item {
+    padding: 14px 16px;
 
-        <div class="placeholder">
+    cursor: pointer;
 
-            <h2>Coverage Builder</h2>
+    transition: var(--transition);
 
-            <p>
-                Build empiric regimens
-                using infection source
-                and resistance risk factors.
-            </p>
+    border-bottom: 1px solid var(--border);
+}
 
-        </div>
+.search-item:hover {
+    background: var(--primary-light);
+}
 
-    </section>
+.hidden {
+    display: none !important;
+}
 
+/* ========================
+   Navigation
+======================== */
 
-    <!-- PEARLS -->
-    <section id="pearlsView" class="view">
+.main-nav {
+    background: white;
 
-        <div class="placeholder">
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 
-            <h2>Board Pearls</h2>
+    padding: 16px 24px;
 
-            <p>
-                High-yield infectious disease
-                recall points and pitfalls.
-            </p>
+    border-bottom: 1px solid var(--border);
+}
 
-        </div>
+.nav-btn {
+    background: white;
 
-    </section>
+    border: 1px solid var(--border);
 
+    border-radius: 12px;
 
-    <!-- QUIZ -->
-    <section id="quizView" class="view">
+    padding: 10px 16px;
 
-        <div class="placeholder">
+    cursor: pointer;
 
-            <h2>Quiz Mode</h2>
+    font-size: 0.95rem;
+    font-weight: 600;
 
-            <p>
-                Test yourself with
-                board-style scenarios.
-            </p>
+    transition: var(--transition);
+}
 
-        </div>
+.nav-btn:hover {
+    background: var(--primary-light);
+}
 
-    </section>
+.nav-btn.active {
+    background: var(--primary);
 
-</main>
+    color: white;
 
+    border-color: var(--primary);
+}
 
-<!-- MODAL -->
-<div id="modalOverlay" class="modal-overlay hidden">
+/* ========================
+   Main
+======================== */
 
-    <div class="modal">
+main {
+    flex: 1;
 
-        <button
-            id="closeModal"
-            class="modal-close"
-            aria-label="Close">
+    width: 100%;
+    max-width: 1400px;
 
-            ×
+    margin: auto;
 
-        </button>
+    padding: 28px 24px 48px;
+}
 
-        <div id="modalContent">
+/* ========================
+   Views
+======================== */
 
-            <!-- Syndrome details inserted here -->
+.view {
+    display: none;
+}
 
-        </div>
+.active-view {
+    display: block;
+}
 
-    </div>
+/* ========================
+   Hero
+======================== */
 
-</div>
+.hero {
+    background: white;
 
+    padding: 32px;
 
-<footer>
+    border-radius: var(--radius);
 
-    <div>
+    box-shadow: var(--shadow-sm);
 
-        EmpiricAbx
+    margin-bottom: 32px;
+}
 
-    </div>
+.hero h2 {
+    font-size: 2rem;
 
-    <div>
+    margin-bottom: 12px;
+}
 
-        Think Source → Bugs → Coverage
+.hero p {
+    color: var(--text-light);
 
-    </div>
+    line-height: 1.7;
 
-</footer>
+    max-width: 850px;
+}
 
+/* ========================
+   Section Header
+======================== */
 
-<script src="js/app.js"></script>
+.section-header {
+    display: flex;
 
-</body>
-</html>
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+}
+
+#syndromeCount {
+    color: var(--text-light);
+}
+
+/* ========================
+   Cards
+======================== */
+
+.card-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(240px, 1fr));
+
+    gap: 20px;
+}
+
+.card {
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    box-shadow: var(--shadow-sm);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-md);
+
+    border-color: var(--primary-light);
+}
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.card-description {
+    color: var(--text-light);
+
+    line-height: 1.6;
+
+    font-size: 0.95rem;
+}
+
+/* ========================
+   Placeholder Sections
+======================== */
+
+.placeholder {
+    background: white;
+
+    padding: 32px;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.placeholder h2 {
+    margin-bottom: 14px;
+}
+
+.placeholder p {
+    color: var(--text-light);
+
+    line-height: 1.7;
+}
+
+/* ========================
+   Modal
+======================== */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 500;
+}
+
+.modal {
+    background: white;
+
+    width: 100%;
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-md);
+
+    padding: 28px;
+
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    color: var(--text-light);
+}
+
+.modal-close:hover {
+    color: var(--danger);
+}
+
+/* ========================
+   Accordion
+======================== */
+
+.accordion {
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    margin-bottom: 14px;
+}
+
+.accordion-header {
+    background: #fafafa;
+
+    padding: 16px 18px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    display: none;
+
+    padding: 18px;
+
+    line-height: 1.7;
+}
+
+.accordion.open .accordion-content {
+    display: block;
+}
+
+/* ========================
+   Badges
+======================== */
+
+.badge {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
+.badge-gp {
+    background: #e8f2ff;
+    color: #1e5fa8;
+}
+
+.badge-gn {
+    background: #edfdf4;
+    color: #2f855a;
+}
+
+.badge-anaerobe {
+    background: #fff4e5;
+    color: #c05621;
+}
+
+.badge-warning {
+    background: #ffe5e5;
+    color: #c53030;
+}
+
+/* ========================
+   Alerts / Pearls
+======================== */
+
+.alert {
+    padding: 16px;
+
+    border-radius: 12px;
+
+    margin-top: 12px;
+}
+
+.alert-warning {
+    background: #fff7e6;
+
+    border-left: 4px solid var(--warning);
+}
+
+.alert-danger {
+    background: #fff0f0;
+
+    border-left: 4px solid var(--danger);
+}
+
+.alert-info {
+    background: var(--primary-light);
+
+    border-left: 4px solid var(--primary);
+}
+
+/* ========================
+   Footer
+======================== */
+
+footer {
+    margin-top: auto;
+
+    padding: 22px;
+
+    background: white;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+}
+
+/* ========================
+   Responsive
+======================== */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-nav {
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+    }
+
+    .nav-btn {
+        white-space: nowrap;
+    }
+
+    .hero {
+        padding: 24px;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal {
+        padding: 22px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 ```
