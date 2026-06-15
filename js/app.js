@@ -1,3 +1,5 @@
+console.log("EmpiricAbx loaded");
+
 let syndromes = [];
 let antibiotics = [];
 let organisms = [];
@@ -11,19 +13,27 @@ const state = {
    INIT
 ========================= */
 
-document.addEventListener("DOMContentLoaded", async () => {
-    await loadData();
+document.addEventListener("DOMContentLoaded", init);
+
+async function init() {
+    console.log("App initializing...");
+
     setupNavigation();
     setupSearch();
+
+    await loadData();
+
     renderSyndromes();
-});
+}
 
 /* =========================
-   LOAD JSON DATA
+   LOAD DATA
 ========================= */
 
 async function loadData() {
     try {
+        console.log("Loading JSON...");
+
         const [s, a, o] = await Promise.all([
             fetch("data/syndromes.json"),
             fetch("data/antibiotics.json"),
@@ -35,6 +45,12 @@ async function loadData() {
         organisms = await o.json();
 
         buildSearchIndex();
+
+        console.log("Data loaded:", {
+            syndromes: syndromes.length,
+            antibiotics: antibiotics.length,
+            organisms: organisms.length
+        });
 
     } catch (err) {
         console.error("Data load error:", err);
@@ -89,14 +105,16 @@ function closeModal() {
     document.getElementById("modalOverlay").classList.add("hidden");
 }
 
+/* Safe DOM binding */
 document.addEventListener("click", (e) => {
     if (e.target.id === "modalOverlay") closeModal();
+
+    const closeBtn = e.target.closest("#closeModal");
+    if (closeBtn) closeModal();
 });
 
-document.getElementById("closeModal").addEventListener("click", closeModal);
-
 /* =========================
-   SYNDROME TEMPLATE
+   TEMPLATE
 ========================= */
 
 function generateSyndromeHTML(s) {
@@ -138,13 +156,14 @@ function generateSyndromeHTML(s) {
 ========================= */
 
 function formatList(arr = []) {
+    if (!arr) return "<p>No data</p>";
     return `<ul>${arr.map(i => `<li>${i}</li>`).join("")}</ul>`;
 }
 
 function formatObject(obj = {}) {
     return `<ul>` +
-        Object.entries(obj)
-            .map(([k, v]) => `<li><b>${k.toUpperCase()}</b>: ${v}</li>`)
+        Object.entries(obj || {})
+            .map(([k, v]) => `<li><b>${k}</b>: ${v}</li>`)
             .join("") +
         `</ul>`;
 }
@@ -156,8 +175,7 @@ function formatObject(obj = {}) {
 function setupNavigation() {
     document.querySelectorAll(".nav-btn").forEach(btn => {
         btn.addEventListener("click", () => {
-            const view = btn.dataset.view;
-            switchView(view);
+            switchView(btn.dataset.view);
         });
     });
 }
@@ -173,13 +191,12 @@ function switchView(view) {
     if (target) target.classList.add("active-view");
 
     document.querySelectorAll(".nav-btn").forEach(b => {
-        b.classList.remove("active");
-        if (b.dataset.view === view) b.classList.add("active");
+        b.classList.toggle("active", b.dataset.view === view);
     });
 }
 
 /* =========================
-   SEARCH ENGINE
+   SEARCH
 ========================= */
 
 function setupSearch() {
@@ -187,16 +204,16 @@ function setupSearch() {
     const results = document.getElementById("searchResults");
 
     input.addEventListener("input", () => {
-        const q = input.value.toLowerCase();
+        const q = input.value.toLowerCase().trim();
 
         if (!q) {
             results.classList.add("hidden");
             return;
         }
 
-        const matches = state.searchIndex.filter(item =>
-            item.text.includes(q)
-        ).slice(0, 8);
+        const matches = state.searchIndex
+            .filter(item => item.text.includes(q))
+            .slice(0, 8);
 
         results.innerHTML = matches.map(m => `
             <div class="search-item" data-id="${m.id}">
@@ -206,7 +223,7 @@ function setupSearch() {
 
         results.classList.remove("hidden");
 
-        document.querySelectorAll(".search-item").forEach(el => {
+        results.querySelectorAll(".search-item").forEach(el => {
             el.addEventListener("click", () => {
                 handleSearchClick(el.dataset.id);
             });
@@ -249,22 +266,12 @@ function buildSearchIndex() {
     });
 }
 
+/* =========================
+   SEARCH CLICK
+========================= */
+
 function handleSearchClick(id) {
     const s = syndromes.find(x => x.id === id);
 
-    if (s) {
-        openSyndromeModal(s);
-    }
+    if (s) openSyndromeModal(s);
 }
-
-/* =========================
-   ACCORDION (future hook)
-========================= */
-
-document.addEventListener("click", (e) => {
-    const header = e.target.closest(".accordion-header");
-    if (!header) return;
-
-    const acc = header.parentElement;
-    acc.classList.toggle("open");
-});
