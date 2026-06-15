@@ -1,0 +1,75 @@
+[
+  {
+    "id": "cap",
+    "name": "Community Acquired Pneumonia",
+    "description": "Most common inpatient pneumonia syndrome.",
+
+    "organisms": {
+      "typical": [
+        "Streptococcus pneumoniae",
+        "Haemophilus influenzae"
+      ],
+      "atypical": [
+        "Mycoplasma",
+        "Legionella"
+      ]
+    },
+
+    "empiric": [
+      "Ceftriaxone + Azithromycin",
+      "Levofloxacin"
+    ],
+
+    "escalation": {
+      "mrsa": "Vancomycin",
+      "pseudomonas": "Cefepime"
+    },
+
+    "pearls": [
+      "Always cover atypicals in CAP."
+    ]
+  },
+
+  {
+    "id": "hap",
+    "name": "Hospital Acquired Pneumonia",
+    "description": "Pneumonia developing after hospital admission.",
+
+    "organisms": {
+      "typical": [
+        "Pseudomonas",
+        "Klebsiella",
+        "MRSA"
+      ]
+    },
+
+    "empiric": [
+      "Vancomycin + Cefepime"
+    ],
+
+    "pearls": [
+      "Assess for pseudomonas risk."
+    ]
+  },
+
+  {
+    "id": "uti",
+    "name": "Urinary Tract Infection",
+    "description": "Cystitis and pyelonephritis.",
+
+    "organisms": {
+      "typical": [
+        "E coli",
+        "Klebsiella"
+      ]
+    },
+
+    "empiric": [
+      "Ceftriaxone"
+    ],
+
+    "pearls": [
+      "Always consider source control when obstructed."
+    ]
+  }
+]
