@@ -2,74 +2,48 @@
   {
     "id": "cap",
     "name": "Community Acquired Pneumonia",
-    "description": "Most common inpatient pneumonia syndrome.",
-
-    "organisms": {
-      "typical": [
-        "Streptococcus pneumoniae",
-        "Haemophilus influenzae"
-      ],
-      "atypical": [
-        "Mycoplasma",
-        "Legionella"
-      ]
-    },
-
+    "short": "Typical + atypical respiratory pathogens",
+    "organisms": [
+      "Strep pneumoniae",
+      "H influenzae",
+      "Moraxella",
+      "Mycoplasma",
+      "Chlamydia",
+      "Legionella"
+    ],
     "empiric": [
       "Ceftriaxone + Azithromycin",
       "Levofloxacin"
     ],
-
     "escalation": {
-      "mrsa": "Vancomycin",
-      "pseudomonas": "Cefepime"
+      "MRSA risk": "Add Vancomycin or Linezolid",
+      "Pseudomonas risk": "Add Cefepime or Zosyn"
     },
-
     "pearls": [
-      "Always cover atypicals in CAP."
+      "Always cover atypicals",
+      "Post-influenza pneumonia → MRSA"
     ]
   },
 
   {
     "id": "hap",
-    "name": "Hospital Acquired Pneumonia",
-    "description": "Pneumonia developing after hospital admission.",
-
-    "organisms": {
-      "typical": [
-        "Pseudomonas",
-        "Klebsiella",
-        "MRSA"
-      ]
-    },
-
-    "empiric": [
-      "Vancomycin + Cefepime"
+    "name": "HAP / VAP",
+    "short": "Hospital-acquired resistant gram negatives + MRSA",
+    "organisms": [
+      "MRSA",
+      "Pseudomonas",
+      "Klebsiella",
+      "Acinetobacter"
     ],
-
-    "pearls": [
-      "Assess for pseudomonas risk."
-    ]
-  },
-
-  {
-    "id": "uti",
-    "name": "Urinary Tract Infection",
-    "description": "Cystitis and pyelonephritis.",
-
-    "organisms": {
-      "typical": [
-        "E coli",
-        "Klebsiella"
-      ]
-    },
-
     "empiric": [
-      "Ceftriaxone"
+      "Vancomycin + Cefepime",
+      "Vancomycin + Zosyn"
     ],
-
+    "escalation": {
+      "Septic shock": "Add second antipseudomonal agent"
+    },
     "pearls": [
-      "Always consider source control when obstructed."
+      "Always cover MRSA + Pseudomonas"
     ]
   }
 ]
