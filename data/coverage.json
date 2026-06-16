@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Vancomycin",
+    "mrsa": true,
+    "mssa": true,
+    "pseudomonas": false,
+    "anaerobes": false,
+    "enterococcus": true,
+    "atypicals": false,
+    "esbl": false
+  },
+  {
+    "name": "Cefepime",
+    "mrsa": false,
+    "mssa": true,
+    "pseudomonas": true,
+    "anaerobes": false,
+    "enterococcus": false,
+    "atypicals": false,
+    "esbl": false
+  }
+]
