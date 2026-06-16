@@ -1,0 +1,11 @@
+{
+  "id":"cefepime",
+  "name":"Cefepime",
+  "class":"4th Generation Cephalosporin",
+  "coverage":[...],
+  "misses":[...],
+  "pearls":[...],
+  "ivToPo":"No oral equivalent",
+  "renalDose":"Adjust if CrCl <60",
+  "deescalation":"Avoid prolonged use if cultures narrow"
+}
