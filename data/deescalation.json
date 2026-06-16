@@ -1,0 +1,14 @@
+[
+  {
+    "culture":"MSSA",
+    "recommendation":"Switch vancomycin to cefazolin."
+  },
+  {
+    "culture":"ESBL E coli",
+    "recommendation":"Use carbapenem."
+  },
+  {
+    "culture":"Enterococcus faecalis",
+    "recommendation":"Consider ampicillin."
+  }
+]
