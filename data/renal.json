@@ -1,0 +1,14 @@
+[
+  {
+    "drug":"Vancomycin",
+    "pearl":"Dose using AUC; monitor renal function."
+  },
+  {
+    "drug":"Cefepime",
+    "pearl":"Dose reduce in renal failure; neurotoxicity risk."
+  },
+  {
+    "drug":"Meropenem",
+    "pearl":"Adjust when CrCl <50."
+  }
+]
