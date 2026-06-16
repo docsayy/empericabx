@@ -22,6 +22,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "15–20 mg/kg IV q8–12h (TDM-guided); PO 125 mg q6h for C. diff",
     "notes": "Nephrotoxic; therapeutic drug monitoring required. PO only for C. diff."
   },
   {
@@ -47,6 +48,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": "caution",
     "qt_prolongation": false,
+    "dosing_frequency": "600 mg IV/PO q12h",
     "notes": "100% oral bioavailability; watch thrombocytopenia with prolonged use"
   },
   {
@@ -72,6 +74,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": "caution",
     "qt_prolongation": false,
+    "dosing_frequency": "6–10 mg/kg IV q24h",
     "notes": "Contraindicated in pneumonia (inactivated by surfactant)"
   },
   {
@@ -97,6 +100,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "2 g IV q8–12h",
     "notes": "Neurotoxicity risk with renal impairment; dose adjust"
   },
   {
@@ -122,6 +126,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "1–2 g IV/IM q24h (up to q12h for severe infections)",
     "notes": "No pseudomonas; no enterococcus; biliary excretion"
   },
   {
@@ -147,6 +152,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "3.375–4.5 g IV q6–8h",
     "notes": "Nephrotoxic with vancomycin; not reliable for ESBL"
   },
   {
@@ -172,6 +178,7 @@
     "c_diff_risk": "high",
     "pregnancy_safe": "caution",
     "qt_prolongation": false,
+    "dosing_frequency": "1 g IV q8h",
     "notes": "Ultra-broad; seizure risk; C. diff risk"
   },
   {
@@ -197,6 +204,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": "caution",
     "qt_prolongation": false,
+    "dosing_frequency": "1 g IV/IM q24h",
     "notes": "No pseudomonas; once-daily dosing; no enterococcus"
   },
   {
@@ -222,6 +230,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": true,
     "qt_prolongation": true,
+    "dosing_frequency": "500 mg IV/PO q24h",
     "notes": "Use with beta-lactam for CAP; QT risk"
   },
   {
@@ -247,6 +256,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": false,
     "qt_prolongation": true,
+    "dosing_frequency": "500–750 mg IV/PO q24h",
     "notes": "Tendon rupture risk; resistance rising"
   },
   {
@@ -272,6 +282,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": false,
     "qt_prolongation": true,
+    "dosing_frequency": "400 mg IV q8–12h or 500–750 mg PO q12h",
     "notes": "Poor strep coverage; tendon/QT risks"
   },
   {
@@ -297,6 +308,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": false,
     "qt_prolongation": true,
+    "dosing_frequency": "400 mg IV/PO q24h",
     "notes": "No pseudomonas; anaerobe coverage; hepatic metabolism"
   },
   {
@@ -322,6 +334,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": "caution",
     "qt_prolongation": false,
+    "dosing_frequency": "500 mg IV/PO q8h",
     "notes": "Always combine for mixed infections; no aerobes"
   },
   {
@@ -347,6 +360,7 @@
     "c_diff_risk": "high",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "600–900 mg IV q8h or 300–450 mg PO q6–8h",
     "notes": "High C. diff risk; inducible resistance in MRSA"
   },
   {
@@ -372,6 +386,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": false,
     "qt_prolongation": false,
+    "dosing_frequency": "1–2 DS tabs PO q12h (or 5 mg/kg TMP IV q8–12h)",
     "notes": "Weak strep coverage; hyperkalemia risk"
   },
   {
@@ -397,6 +412,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "875/125 mg PO q12h or 500/125 mg q8h",
     "notes": "Best oral anaerobe coverage"
   },
   {
@@ -422,6 +438,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "1–2 g IV q8h",
     "notes": "MSSA drug of choice; no MRSA"
   },
   {
@@ -447,6 +464,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "1–2 g IV q4h",
     "notes": "Hepatotoxicity; interstitial nephritis"
   },
   {
@@ -472,6 +490,7 @@
     "c_diff_risk": "low",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "",
     "notes": "Similar to nafcillin; less used"
   },
   {
@@ -497,6 +516,7 @@
     "c_diff_risk": "moderate",
     "pregnancy_safe": true,
     "qt_prolongation": false,
+    "dosing_frequency": "1–2 g IV q4–6h",
     "notes": "Combine with gentamicin for synergy in endocarditis"
   },
   {
