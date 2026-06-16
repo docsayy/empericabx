@@ -1,0 +1,12 @@
+[
+  {
+    "iv":"Cefazolin",
+    "po":"Cephalexin",
+    "criteria":"Clinically improved and tolerating PO."
+  },
+  {
+    "iv":"Ampicillin-sulbactam",
+    "po":"Amoxicillin-clavulanate",
+    "criteria":"Source controlled."
+  }
+]
