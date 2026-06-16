@@ -1,0 +1,19 @@
+{
+  "mrsaRisk":[
+    "Prior MRSA colonization",
+    "Recent influenza",
+    "IV drug use"
+  ],
+
+  "pseudomonasRisk":[
+    "Structural lung disease",
+    "Recent IV antibiotics",
+    "Prior pseudomonas"
+  ],
+
+  "esblRisk":[
+    "Recent hospitalization",
+    "Prior ESBL",
+    "Nursing home"
+  ]
+}
